@@ -1,0 +1,15 @@
+{
+	"description": "The weixin app of archives of ynu",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx996f20b193f308e4",
+	"projectname": "ynu_archives_app",
+	"miniprogramRoot": "./dist",
+	"condition": {}
+}

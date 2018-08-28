@@ -1,0 +1,41 @@
+<style lang="less">
+</style>
+
+<template>
+  <view>
+    <title>
+      <view slot="title"><text class="title">服务咨询</text></view>
+    </title>
+
+    <view class="mainContain">
+      <imageTextGroup :list="list"></imageTextGroup>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Title from '@/components/title'
+import ImageTextGroup from '@/components/imageTextGroup'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '服务咨询'
+  };
+  components = {
+    title: Title,
+    imageTextGroup: ImageTextGroup
+  };
+
+  data = {
+    list: [
+        {imageSrc: '../images/default.png', title: '查档须知'},
+        {imageSrc: '../images/default.png', title: '档案查询预约', pageUrl: 'appointment'},
+        {imageSrc: '../images/default.png', title: '归档指南'},
+        {imageSrc: '../images/default.png', title: '档案征集'},
+        {imageSrc: '../images/default.png', title: '常见问题'},
+        {imageSrc: '../images/default.png', title: '在线交流'}
+    ]
+  }
+}
+</script>

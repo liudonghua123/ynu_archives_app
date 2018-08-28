@@ -1,0 +1,45 @@
+<style type="less">
+.imageTextItem {
+  .icoContainer {
+  }
+
+  .ico {
+    width: 150rpx;
+    height: 150rpx;
+  }
+
+  .title {
+  }
+}
+</style>
+<template>
+  <view class="imageTextItem" @tap="tap({{item.pageName}})">
+    <view class="icoContainer">
+      <image class="ico" mode="aspectFit" src="{{item.imageSrc}}" />
+    </view>
+    <text class="title">{{item.title}}</text>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+
+export default class ImageTextItem extends wepy.component {
+  props = {
+    item: {}
+  }
+  data = {}
+  methods = {
+    tap(pageName) {
+      console.log(
+        `Clicked item imageSrc ${this.item.imageSrc}, title ${
+          this.item.title
+        }, pageName ${pageName}`
+      )
+      const page = this.item.pageUrl || 'content'
+      wx.navigateTo({
+        url: `${page}?pageName=${pageName}&title=${this.item.title}`
+      })
+    }
+  }
+}
+</script>

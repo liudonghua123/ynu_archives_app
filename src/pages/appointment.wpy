@@ -1,0 +1,163 @@
+<style lang="less">
+
+.mainContain {
+  margin: 30rpx;
+
+  .section_description {
+    font-size: 0.90em;
+    color:lightgrey;
+  }
+
+  .section_profile {
+    display: flex;
+    align-content: center;
+
+    .ico_profile {
+      font-size: 3em;
+      margin: 50rpx auto;
+    }
+  }
+
+  .section {
+    display: flex;
+    align-content: center;
+    border: 1rpx solid lightgray;
+    padding: 20rpx;
+
+    .section_title {
+      width: 20%;
+      color:lightgrey;
+      border-right: 1rpx solid lightgray;
+    }
+
+    .section_control {
+      width: 80%;
+      color:lightgrey;
+      padding-left:30rpx;
+    }
+  }
+
+  .section_gap {
+    margin-top: 30rpx;
+  }
+
+
+  .formButton {
+    margin: 30rpx 0;
+    font-size:15px;
+  }
+
+  .section_upload {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    .section_title {
+      font-size: 1.1em;
+      color:lightgrey;
+      flex-grow: 1;
+      flex-basis:auto;
+    }
+
+    .section_control {
+      flex-grow: 0;
+      font-size:1.5em;
+    }
+  }
+
+  .section_upload_control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30rpx 0;
+    padding: 30rpx 0;
+    border-top: 1rpx solid lightgray;
+    border-bottom: 1rpx solid lightgray;
+
+    .section_control {
+      flex-basis: content;
+      font-size: 5em;
+      margin: 0 auto;
+    }
+
+    .section_title {
+      font-size: 0.9em;
+      color:lightgrey;
+      flex-basis:content;
+      margin: 0 auto;
+    }
+  }
+}
+</style>
+
+<template>
+  <view>
+    <title>
+      <view slot="title"><text class="title">档案查询预约</text></view>
+    </title>
+
+    <view class="mainContain">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section_profile section_gap">
+          <span class="fa fa-user ico_profile"/>
+        </view>
+        <view class="section_gap">
+          <view class="section_description">注：请正确输入您的基本信息，上传本人身份证照片，这些信息是预约查档以及在线查档时部门审核或授权的参考依据。</view>
+        </view>
+        <view class="section section_gap">
+          <view class="section_title">姓名</view>
+          <input class="section_control" name="input" placeholder="请输入姓名" />
+        </view>
+        <view class="section section_gap">
+          <view class="section_title">单位</view>
+          <input class="section_control" name="input" placeholder="请输入所在单位名称" />
+        </view>
+        <view class="section section_gap">
+          <view class="section_title">证件</view>
+          <input class="section_control" name="input" placeholder="530302000000000000" />
+        </view>
+        <view class="section section_gap">
+          <view class="section_title">手机</view>
+          <input class="section_control" name="input" placeholder="13800000000" />
+        </view>
+        <view class="section section_gap">
+          <view class="section_title">邮箱</view>
+          <input class="section_control" name="input" placeholder="请输入本人电子邮件地址" />
+        </view>
+        <view class="section section_gap">
+          <view class="section_title">地址</view>
+          <input class="section_control" name="input" placeholder="请输入邮寄档案的地址" />
+        </view>
+        <view class="section_upload section_gap">
+          <view class="section_title">请上传本人身份证</view>
+          <icon class="fa fa-trash section_control"/>
+        </view>
+        <view class="section_upload_control section_gap">
+          <span class="fa fa-plus section_control"/>
+          <view class="section_title">请选择文件</view>
+        </view>
+        <view class="btn-area">
+          <button class="formButton" type="primary" formType="submit">提交</button>
+          <button class="formButton" type="warn" formType="reset">重置</button>
+        </view>
+      </form>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Title from '@/components/title'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '档案查询预约'
+  }
+  components = {
+    title: Title
+  }
+
+  data = {
+  }
+}
+</script>

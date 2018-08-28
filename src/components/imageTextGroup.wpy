@@ -1,0 +1,46 @@
+<style type="less">
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .item {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 10rpx;
+    }
+  }
+</style>
+<template>
+  <view class="group">
+    <repeat for="{{list}}" item="item">
+      <imageTextItem class="item" :item="item"></imageTextItem>
+    </repeat>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import ImageTextItem from './imageTextItem'
+
+  export default class ImageTextGroup extends wepy.component {
+    props = {
+      list: {}
+    }
+
+    onLoad () {
+      console.info(this.list[1].title)
+    }
+
+    components = {
+      imageTextItem: ImageTextItem
+    }
+    methods = {
+      tap () {
+      }
+    }
+  }
+</script>

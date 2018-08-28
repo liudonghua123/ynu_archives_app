@@ -1,0 +1,38 @@
+<style lang="less">
+</style>
+
+<template>
+  <view>
+    <title>
+      <view slot="title"><text class="title">校史展览</text></view>
+    </title>
+
+    <view class="mainContain">
+      <imageTextGroup :list="list"></imageTextGroup>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Title from '@/components/title'
+import ImageTextGroup from '@/components/imageTextGroup'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '校史展览'
+  };
+  components = {
+    title: Title,
+    imageTextGroup: ImageTextGroup
+  };
+
+  data = {
+    list: [
+        {imageSrc: '../images/default.png', title: '文物建筑讲解'},
+        {imageSrc: '../images/default.png', title: '影像校史'},
+        {imageSrc: '../images/default.png', title: '专题巡展'}
+    ]
+  };
+}
+</script>

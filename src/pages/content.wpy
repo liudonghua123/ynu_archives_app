@@ -1,0 +1,67 @@
+<style lang="less">
+.container {
+  margin: 10rpx;
+
+  .defaultImage {
+    width: 90%;
+    margin: auto;
+  }
+
+  .defaultText {
+    font-size: 1.25em;
+    padding-left: 2em;
+  }
+
+  .defaultText::first-line {
+    padding-left: 2em;
+  }
+
+  .imageContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
+<template>
+
+<view>
+  <view wx:for="{{contents}}" class="container">
+    <view wx:if="{{item.type == 'text'}}"><text class="defaultText">{{item.content}}</text></view>
+    <view wx:if="{{item.type == 'image'}}" class="imageContainer"><image class="defaultImage" mode="widthFix" src="{{item.src}}" /></view>
+    <view wx:if="{{item.type == 'audio'}}"><audio src="{{item.src}}" poster="{{item.poster}}" name="{{item.name}}" author="{{item.author}}" controls></audio></view>
+    <view wx:if="{{item.type == 'video'}}"><video src="{{item.src}}"   controls ></video></view>
+  </view>
+</view>
+
+</template>
+<script>
+import wepy from 'wepy'
+
+export default class Content extends wepy.page {
+  config = {
+    navigationBarTitleText: ''
+  }
+
+  props = {
+    pageName: String
+  }
+
+  data = {
+    contents: [
+      { type: 'text', content: 'This is default text' },
+      { type: 'image', src: '../images/logo1.jpg' }
+    ]
+  }
+
+  onLoad(options) {
+    console.log(`options.pageName`, options.pageName)
+    if (this.$parent.globalData.pageData[options.pageName]) {
+      this.contents = this.$parent.globalData.pageData[options.pageName]
+    }
+    wx.setNavigationBarTitle({ title: options.title })
+    console.log(`this.contents`, this.contents)
+    this.$apply()
+  }
+}
+</script>

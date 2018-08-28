@@ -1,0 +1,64 @@
+<style lang="less">
+</style>
+
+<template>
+  <view>
+    <title>
+      <view slot="title"><text class="title">关于我们</text></view>
+    </title>
+    <view class="mainContain">
+      <imageTextGroup :list="list"></imageTextGroup>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import Title from '@/components/title'
+import ImageTextGroup from '@/components/imageTextGroup'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '关于我们'
+  }
+  components = {
+    title: Title,
+    imageTextGroup: ImageTextGroup
+  }
+
+  data = {
+    list: [
+      {
+        imageSrc: '../images/default.png',
+        title: '档案馆',
+        pageName: 'danganguan'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '馆区建设',
+        pageName: 'guanqujianshe'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '馆藏档案',
+        pageName: 'guancangdangan'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '研究成果',
+        pageName: 'yanjiuchengguo'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '志愿者招募',
+        pageName: 'zhiyuanzhezhaomu'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '位置导航',
+        pageName: 'weizhidaohang'
+      }
+    ]
+  }
+}
+</script>
