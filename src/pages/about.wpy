@@ -6,7 +6,7 @@
     <title>
       <view slot="title"><text class="title">关于我们</text></view>
     </title>
-    <view class="mainContain">
+    <view class="mainContainer">
       <imageTextGroup :list="list"></imageTextGroup>
     </view>
   </view>

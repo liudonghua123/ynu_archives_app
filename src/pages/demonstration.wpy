@@ -1,4 +1,16 @@
 <style lang="less">
+.contactContainer {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:100rpx;
+
+
+  button, contact-button {
+    flex-grow:1;
+    margin:20rpx;
+  }
+}
 </style>
 
 <template>
@@ -7,8 +19,16 @@
       <view slot="title"><text class="title">校史展览</text></view>
     </title>
 
-    <view class="mainContain">
+    <view class="mainContainer">
       <imageTextGroup :list="list"></imageTextGroup>
+    </view>
+    <view class="contactContainer">
+      <!-- <contact-button
+        type="primary"
+        size="20"
+        session-from="weapp"
+      >在线客服</contact-button> -->
+      <button type="primary" open-type="contact"> 在线交流 </button>
     </view>
   </view>
 </template>
@@ -21,18 +41,18 @@ import ImageTextGroup from '@/components/imageTextGroup'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '校史展览'
-  };
+  }
   components = {
     title: Title,
     imageTextGroup: ImageTextGroup
-  };
+  }
 
   data = {
     list: [
-        {imageSrc: '../images/default.png', title: '文物建筑讲解'},
-        {imageSrc: '../images/default.png', title: '影像校史'},
-        {imageSrc: '../images/default.png', title: '专题巡展'}
+      { imageSrc: '../images/default.png', title: '文物建筑讲解' },
+      { imageSrc: '../images/default.png', title: '影像校史' },
+      { imageSrc: '../images/default.png', title: '专题巡展' }
     ]
-  };
+  }
 }
 </script>

@@ -7,7 +7,7 @@
       <view slot="title"><text class="title">服务咨询</text></view>
     </title>
 
-    <view class="mainContain">
+    <view class="mainContainer">
       <imageTextGroup :list="list"></imageTextGroup>
     </view>
   </view>
