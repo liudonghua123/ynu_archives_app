@@ -1,0 +1,74 @@
+<style lang="less">
+#map {
+  height: 1080px;
+  width: 100%;
+  padding: 10px;
+}
+</style>
+
+<template>
+  <view>
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" scale="18" bindtap="click">
+  </map>
+</view>
+
+</template>
+<script>
+import wepy from 'wepy'
+
+export default class Navigation extends wepy.page {
+  config = {
+    navigationBarTitleText: ''
+  }
+
+  props = {
+    pageName: String
+  }
+
+  data = {
+    latitude: 25.054209,
+    longitude: 102.703527,
+    markers: []
+  }
+
+  onLoad(options) {
+    var self = this;
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function(res) {
+        var latitude = res.latitude;
+        var longitude = res.longitude;
+        self.setData({
+          latitude, 
+          longitude,
+          markers: [{
+            latitude: res.latitude,
+            longitude: res.longitude,
+            iconPath: '../images/ding.png',
+            width: "32px",
+            height: "32px",
+            callout: {
+              content: "您当前在这里，点击任意位置导航至云南大学档案馆",
+              fontSize: "16px",
+              display: "ALWAYS"
+            }
+          }]
+        });
+      }
+    })
+  }
+
+  methods = {
+    click() {
+      wx.openLocation({
+        latitude: 25.054209,
+        longitude: 102.703527,
+        scale: 18,
+        name: '云南大学-档案馆',
+        address: '云南省昆明市五华区翠湖北路2号'
+      })
+    }
+  }
+}
+
+</script>

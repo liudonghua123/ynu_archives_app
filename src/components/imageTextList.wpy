@@ -1,0 +1,66 @@
+<style type="less">
+  .imageTextItem {
+    height: 75px;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    margin:10px;
+    box-shadow:5px 5px 3px #888888;
+
+
+    .icoContainer {
+      height: 100px;
+      width: 100px;
+      padding: 10px;
+      margin-right: 20px;
+
+      .ico {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+</style>
+<template>
+  <view class="group">
+    <repeat for="{{list}}" item="item">
+      <view class="imageTextItem" @tap="tap({{item}})">
+        <view class="icoContainer">
+          <image class="ico" mode="aspectFit" src="{{item.imageSrc}}" />
+        </view>
+        <text class="title">{{item.title}}</text>
+      </view>
+    </repeat>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import ImageTextItem from './imageTextItem'
+
+  export default class ImageTextList extends wepy.component {
+    props = {
+      list: {}
+    }
+
+    onLoad () {
+      console.info(this.list[1].title)
+    }
+
+    components = {
+      imageTextItem: ImageTextItem
+    }
+    methods = {
+      tap(item) {
+        console.log(
+          `Clicked item imageSrc ${item.imageSrc}, title ${
+            item.title
+          }, pageName ${item.pageName}`
+        )
+        const page = item.pageUrl || 'content'
+        wx.navigateTo({
+          url: `${page}?pageName=${item.pageName}&title=${item.title}`
+        })
+      }
+    }
+  }
+</script>

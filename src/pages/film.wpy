@@ -1,0 +1,44 @@
+<style lang="less">
+</style>
+
+<template>
+  <view>
+    <view class="mainContainer">
+      <imageTextListFilm :list="list"></imageTextListFilm>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import ImageTextListFilm from '@/components/imageTextListFilm'
+
+export default class Film extends wepy.page {
+  config = {
+    navigationBarTitleText: '影像校史'
+  }
+  components = {
+    imageTextListFilm: ImageTextListFilm
+  }
+
+  data = {
+    list: [
+      {
+        imageSrc: 'https://7465-test-06f65f-1257618605.tcb.qcloud.la/1.“状元教授”袁嘉谷-min.jpg?sign=d627f8f0c4a01860b7a6c54cceeac5e7&t=1536996104',
+        title: '曾经风雅——大师篇',
+        pageName: 'cjfy'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '贡院寻踪——溯源篇',
+        pageName: 'gyxj'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '古风今韵——基建篇',
+        pageName: 'gfjy'
+      }
+    ]
+  }
+}
+</script>

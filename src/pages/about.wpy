@@ -56,7 +56,8 @@ export default class Index extends wepy.page {
       {
         imageSrc: '../images/default.png',
         title: '位置导航',
-        pageName: 'weizhidaohang'
+        pageName: 'weizhidaohang',
+        pageUrl: 'navigation'
       }
     ]
   }

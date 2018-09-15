@@ -1,0 +1,59 @@
+<style lang="less">
+</style>
+
+<template>
+  <view>
+    <view class="mainContainer">
+      <imageTextList :list="list"></imageTextList>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import ImageTextList from '@/components/imageTextList'
+
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '专题巡展'
+  }
+  components = {
+    imageTextList: ImageTextList
+  }
+
+  data = {
+    list: [
+      {
+        imageSrc: 'https://7465-test-06f65f-1257618605.tcb.qcloud.la/1.“状元教授”袁嘉谷-min.jpg?sign=d627f8f0c4a01860b7a6c54cceeac5e7&t=1536996104',
+        title: '曾经风雅——大师篇',
+        pageName: 'cjfy'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '贡院寻踪——溯源篇',
+        pageName: 'gyxj'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '古风今韵——基建篇',
+        pageName: 'gfjy'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '九秩春秋——发展篇',
+        pageName: 'jzcq'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '恰同学年少——学子篇',
+        pageName: 'qtxsn'
+      },
+      {
+        imageSrc: '../images/default.png',
+        title: '往事追忆——光影篇',
+        pageName: 'wszy'
+      }
+    ]
+  }
+}
+</script>

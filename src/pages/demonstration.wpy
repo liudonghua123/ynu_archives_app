@@ -50,8 +50,8 @@ export default class Index extends wepy.page {
   data = {
     list: [
       { imageSrc: '../images/default.png', title: '文物建筑讲解' },
-      { imageSrc: '../images/default.png', title: '影像校史' },
-      { imageSrc: '../images/default.png', title: '专题巡展' }
+      { imageSrc: '../images/default.png', title: '影像校史', pageUrl: 'film' },
+      { imageSrc: '../images/default.png', title: '专题巡展', pageUrl: 'display' }
     ]
   }
 }
