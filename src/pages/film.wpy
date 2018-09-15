@@ -26,17 +26,21 @@ export default class Film extends wepy.page {
       {
         imageSrc: 'https://7465-test-06f65f-1257618605.tcb.qcloud.la/1.“状元教授”袁嘉谷-min.jpg?sign=d627f8f0c4a01860b7a6c54cceeac5e7&t=1536996104',
         title: '曾经风雅——大师篇',
-        pageName: 'cjfy'
+        pageName: 'cjfy',
+        description: "曾经风雅——大师篇曾经风雅——大师篇曾经风雅——大师篇"
+        
       },
       {
         imageSrc: '../images/default.png',
         title: '贡院寻踪——溯源篇',
-        pageName: 'gyxj'
+        pageName: 'gyxj',
+        description: "曾经风雅——大师篇曾经风雅——大师篇曾经风雅——大师篇"
       },
       {
         imageSrc: '../images/default.png',
         title: '古风今韵——基建篇',
-        pageName: 'gfjy'
+        pageName: 'gfjy',
+        description: "曾经风雅——大师篇曾经风雅——大师篇曾经风雅——大师篇"
       }
     ]
   }
