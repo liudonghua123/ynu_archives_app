@@ -18,6 +18,23 @@
     }
   }
 
+  
+  //.userinfo {
+   // display: flex;
+    //flex-direction: column;
+    //align-items: center;
+  //}
+ 
+  //.userinfo-avatar {
+  //  width: 128rpx;
+   // height: 128rpx;
+    //margin: 20rpx;
+  //  border-radius: 50%;
+  //}
+         // <view  bindtap="bindViewTap" class="userinfo">
+       //   <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+       // </view>
+
   .section {
     display: flex;
     align-content: center;
@@ -53,7 +70,7 @@
     align-content: center;
 
     .section_title {
-      font-size: 1.1em;
+      font-size: 0.9em;
       color:lightgrey;
       flex-grow: 1;
       flex-basis:auto;
@@ -61,7 +78,7 @@
 
     .section_control {
       flex-grow: 0;
-      font-size:1.5em;
+      font-size:0.9em;
     }
   }
 
@@ -76,7 +93,7 @@
 
     .section_control {
       flex-basis: content;
-      font-size: 5em;
+      font-size: 0.9em;
       margin: 0 auto;
     }
 

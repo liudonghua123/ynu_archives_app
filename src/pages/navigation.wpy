@@ -32,28 +32,29 @@ export default class Navigation extends wepy.page {
   }
 
   onLoad(options) {
-    var self = this;
+    var self = this
     wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    // 返回可以用于wx.openLocation的经纬度
+      type: 'gcj02',
       success: function(res) {
-        var latitude = res.latitude;
-        var longitude = res.longitude;
+        var latitude = res.latitude
+        var longitude = res.longitude
         self.setData({
-          latitude, 
+          latitude,
           longitude,
           markers: [{
             latitude: res.latitude,
             longitude: res.longitude,
             iconPath: '../images/ding.png',
-            width: "32px",
-            height: "32px",
+            width: '32px',
+            height: '32px',
             callout: {
-              content: "您当前在这里，点击任意位置导航至云南大学档案馆",
-              fontSize: "16px",
-              display: "ALWAYS"
+              content: '您当前在这里，点击任意位置导航至云南大学档案馆',
+              fontSize: '16px',
+              display: 'ALWAYS'
             }
           }]
-        });
+        })
       }
     })
   }

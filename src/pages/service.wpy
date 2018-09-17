@@ -29,11 +29,11 @@ export default class Index extends wepy.page {
 
   data = {
     list: [
-        {imageSrc: '../images/default.png', title: '查档须知'},
+        {imageSrc: '../images/default.png', title: '查档须知', pageName: 'chadangxuzhi'},
         {imageSrc: '../images/default.png', title: '档案查询预约', pageUrl: 'appointment'},
-        {imageSrc: '../images/default.png', title: '归档指南'},
-        {imageSrc: '../images/default.png', title: '档案征集'},
-        {imageSrc: '../images/default.png', title: '常见问题'},
+        {imageSrc: '../images/default.png', title: '归档指南', pageName: 'guidangzhinan'},
+        {imageSrc: '../images/default.png', title: '档案征集', pageName: 'danganzhengji'},
+        {imageSrc: '../images/default.png', title: '常见问题', pageName: 'changjianwenti'},
         {imageSrc: '../images/default.png', title: '在线交流'}
     ]
   }
